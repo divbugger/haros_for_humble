@@ -585,7 +585,7 @@ class RosCMakeParser(LoggingObject):
         if args[i] in ("IMPORTED", "ALIAS", "OBJECT", "INTERFACE"):
             return # TODO
         target = BuildTarget.new_target(name, args[i:], self.directory, False)
-        self.libraries[name] = target
+        self.executables[name] = target
 
     def _process_executable(self, args):
         n = len(args)
